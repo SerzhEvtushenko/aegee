@@ -1,0 +1,33 @@
+# You can use follow magic constants:
+# @controller:
+# @action:
+# @params:
+# @format
+
+routes:
+
+
+  logout:
+    url: 'logout/'
+    controller: Admin
+    action: Logout
+
+
+  settings:
+    url: 'settings/'
+    controller: Admin
+    action: Settings
+
+  upload_handler:
+    url: 'upload_handler/?'
+    controller: Upload
+    action: Handle
+
+  admin_route:
+    url: '{controller}/({action}(\.{format})?/({id}/?)?)?(\?.*)?(/{params})?(page/{page_number}/)?'
+    forward:
+      info: [add,edit]
+
+  default_route:
+    url: /?
+    controller: Admin

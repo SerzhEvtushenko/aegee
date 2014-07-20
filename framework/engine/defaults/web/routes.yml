@@ -1,0 +1,22 @@
+# You can use follow magic constants:
+# @controller:
+# @action:
+# @params:
+# @format
+# @field:
+# @other:
+routes:
+  controller_action_format:
+    url: '{controller}/{action}.{format}'
+  controller_action:
+    url: '{controller}/{action}/?'
+  controller_format:
+    url: '{controller}.{format}'
+  controller:
+    url: '{controller}/?'
+  action:
+    url: '{action}/?'
+
+  default_route:
+    url: /?
+    controller: Index

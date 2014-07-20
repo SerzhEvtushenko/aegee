@@ -1,0 +1,33 @@
+table: partners
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  title:
+    type: varchar(255)
+    not_null: true
+  description:
+    type: text
+  website:
+    type: varchar(255)
+  _position:
+    type: 'int(11) unsigned'
+    default: '0'
+  category:
+    type: tinyint
+abilities:
+  sort:
+    unique_field: category
+  files:
+    image: true
+  mlt:
+    columns:
+      - title
+      - description
+indexes:
+  primary:
+    columns:
+      - id
+  category:
+    type: simple
+    columns: category

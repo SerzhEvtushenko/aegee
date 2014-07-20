@@ -1,0 +1,105 @@
+# You can use follow magic constants:
+# @controller:
+# @action:
+# @params:
+# @format
+
+routes:
+
+  user:
+    url: 'user/{id}/'
+    controller: Profile
+    action: Detail
+
+  project_detail:
+    url: 'project/{slug}/'
+    controller: Projects
+    action: Detail
+
+  save_avatar:
+    url: 'profile/save-avatar/'
+    controller: Profile
+    action: SaveAvatar
+
+  profile_save_avatar:
+    url: 'profile/save-avatar/'
+    controller: Profile
+    action: SaveAvatar
+  visa_detail:
+    url: 'visa/{slug}/'
+    controller: Index
+    action: Visa
+
+  event_list_with_tag:
+    url: 'events/tag/{tag}/'
+    controller: Events
+    action: Default
+
+  event_detail:
+    url: 'event-detail/{slug}/'
+    controller: Events
+    action: Detail
+
+  news_list_with_tag:
+    url: 'news/tag/{tag}/'
+    controller: News
+    action: Default
+
+  news_detail:
+    url: 'news-detail/{slug}/'
+    controller: News
+    action: Detail
+
+  working_groups:
+    url: 'working-groups/'
+    controller: Index
+    action: WorkingGroups
+  aegee_europe:
+    url: 'aegee-europe/'
+    controller: Index
+    action: AegeeUerope
+
+  aegee_kyiv:
+    url: 'aegee-kyiv/'
+    controller: Index
+    action: AegeeKyiv
+
+  how_to_join:
+    url: 'how-to-join/'
+    controller: Index
+    action: HowToJoin
+
+  registration:
+    url: 'registration/'
+    controller: Profile
+    action: Registration
+
+  logout:
+    url: 'logout/'
+    controller: Profile
+    action: Logout
+
+  password_change:
+    url: 'password-change/{hash}/'
+    controller: Profile
+    action: PasswordChange
+
+
+  controller_action_format:
+    url: '{controller}/{action}.{format}'
+  controller_action:
+    url: '{controller}/{action}/'
+  controller_format:
+    url: '{controller}.{format}'
+  controller:
+    url: '{controller}/'
+  action:
+    url: '{action}/'
+
+  default_route:
+    url: /?
+    controller: Index
+
+fixers:
+  paging:
+    url: 'page/{page_number}/'

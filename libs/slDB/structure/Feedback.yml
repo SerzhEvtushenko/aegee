@@ -1,0 +1,31 @@
+table: feedbacks
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  email:
+    type: varchar(255)
+    not_null: true
+    validation:
+      email: true
+  name:
+    type: varchar(255)
+    not_null: true
+  content:
+    type: text
+    not_null: true
+  is_processed:
+    type: tinyint
+    defaukt: 0
+  _created_at:
+    type: datetime
+    default: '#sql#NOW()'
+  _updated_at:
+    type: datetime
+    default: '#sql#NOW()'
+abilities:
+  timetrack: true
+indexes:
+  primary:
+    columns:
+      - id

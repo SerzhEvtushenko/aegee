@@ -1,0 +1,117 @@
+acl_groups:
+  columns:
+    id:
+      type: int(11) unsigned
+      auto_increment: true
+    title: varchar(255)
+  indexes:
+    primary:
+      columns: [id]
+      type: primary
+
+acl_users:
+  columns:
+    id:
+      type: int(11) unsigned
+      auto_increment: true
+    login:
+      type: varchar(255)
+      not_null: true    
+    password:
+      type: varchar(255)
+      not_null: true
+    last_login:
+      type: datetime
+  indexes:
+    primary:
+      columns: [id]
+      type: primary
+
+acl_rights:
+  columns:
+    id:
+      type: varchar(255)
+      not_null: true
+    title: varchar(255)
+  indexes:
+    primary:
+      columns: [id]
+      type: primary
+    
+      
+acl_users_groups:
+  columns:
+    id_group: int(11) unsigned
+    id_user: int(11) unsigned
+  indexes:
+    group_user:
+      columns: [id_group, id_user]
+      type: unique
+  constraints:
+    fk_id_group:
+      foreign_table: acl_groups
+      local_field: id_group
+      foreign_field: id
+
+acl_users_rights:
+  columns:
+    id_user:
+      type: int(11) unsigned
+      not_null: true
+    id_right:
+      type: varchar(255)
+      not_null: true
+  indexes:
+    user_right:
+      columns: [id_user, id_right]
+      type: unique
+  constraints:
+    fk_id_right:
+      foreign_table: acl_rights
+      local_field: id_right
+      foreign_field: id
+      on_delete: cascade
+
+acl_groups_rights:
+  columns:
+    id_group:
+      type: int(11) unsigned
+      not_null: true
+    id_right:
+      type: varchar(255)
+      not_null: true
+  indexes:
+    group_right:
+      columns: [id_group, id_right]
+      type: unique
+  constraints:
+    fk_id_right:
+      foreign_table: acl_rights
+      local_field: id_right
+      foreign_field: id
+      on_delete: cascade
+    fk_id_group:
+      foreign_table: acl_groups
+      local_field: id_group
+      foreign_field: id
+      on_delete: cascade
+acl_objects_rights:
+  columns:
+    id:
+      type: int(11) unsigned
+      auto_increment: true
+    object_type:
+      type: varchar(255)
+      not_null: true
+    criteria:
+      type: varchar(255)
+      not_null: true
+    id_user:
+      type: int(11)
+    id_right:
+      type: varchar(255)
+      not_null: true
+  indexes:
+    primary:
+      columns: [id]
+      type: primary

@@ -1,0 +1,8 @@
+view:
+  templates:
+    login: "_login.tpl"
+    rights: "_have_no_rights.tpl"
+    scope: admin
+tables:
+  users: acl_users
+  login_field: email

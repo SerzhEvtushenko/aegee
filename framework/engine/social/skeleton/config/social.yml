@@ -1,0 +1,33 @@
+environments:
+  #----------------------------
+  "project_name.local":
+#  https://developers.facebook.com/apps
+      FB_APP_ID: ''
+      FB_APP_SECRET_KEY: ''
+#http://vk.com/editapp?act=create
+      VK_APP_ID: ''
+      VK_APP_SECRET_KEY: ''
+#http://www.odnoklassniki.ru/dk?st.cmd=appsInfoMyDevList&st._aid=Apps_Info_MyDev
+      ODN_APP_ID: ''
+      ODN_APP_PUBLIC_KEY: ''
+      ODN_APP_SECRET_KEY: ''
+
+      namespace: project_name
+
+#create application http://habrahabr.ru/post/147419/
+SETTINGS_FB: 'read_stream,email,publish_stream,user_likes'
+SETTINGS_VK: ''
+FIELDS_VK: 'uid, first_name, last_name,photo,sex,bdate'
+ODN_SCOPE: 'VALUABLE ACCESS'
+FB_PAGE_ID: ''
+VK_GROUP: ''
+SHARE_IMAGE: ''
+share_title: ''
+share_description: ''
+like_group: false
+site_login: true
+
+
+
+
+

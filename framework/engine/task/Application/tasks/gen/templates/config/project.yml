@@ -1,0 +1,19 @@
+name: __NAME__
+default_application: __DEFAULT_APP__
+image_engine: slIMagick
+imagick_path: ""
+dev_mode: true
+show_dev_console: true
+dev_key: __DEV_KEY__
+
+timezone: Europe/Kiev
+session_lifetime: 10m
+
+view:
+  force_compile: true
+  not_found: standalone
+
+mailing:
+   transport: mail
+   log_errors: true
+   log_storage: file

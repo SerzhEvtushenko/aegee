@@ -1,0 +1,378 @@
+table: static_pages
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+    not_null: true
+  system_title:
+    type: varchar(255)
+  slug:
+    type: varchar(255)
+  translate:
+    type: tinyint
+    default: 0
+  lang:
+    type: char(2)
+  _dynamic_values:
+    type: longtext
+abilities:
+  dynamic_structure:
+    field_getter: getSlug
+    general:
+      columns:
+        header_logo_alt_text:
+          type: varchar(255)
+        header_slogan:
+          type: varchar(255)
+        header_lang_ua:
+          type: varchar(255)
+        header_lang_en:
+          type: varchar(255)
+        header_feedback:
+          type: varchar(255)
+        header_registration:
+          type: varchar(255)
+        header_login:
+          type: varchar(255)
+        header_profile:
+          type: varchar(255)
+        header_exit:
+          type: varchar(255)
+        header_form_login:
+          type: varchar(255)
+        header_form_pass:
+          type: varchar(255)
+        header_form_error:
+          type: varchar(255)
+        header_form_btn:
+          type: varchar(255)
+        header_recover_password:
+          type: varchar(255)
+        header_facebook_link:
+          type: varchar(255)
+        header_vk_link:
+          type: varchar(255)
+        header_youtube_link:
+          type: varchar(255)
+        menu_main:
+          type: varchar(255)
+        menu_about:
+          type: varchar(255)
+        menu_what_is_aegee:
+          type: varchar(255)
+        menu_aegee_europe:
+          type: varchar(255)
+        menu_aegee_kyiv:
+          type: varchar(255)
+        menu_activity:
+          type: varchar(255)
+        menu_projects:
+          type: varchar(255)
+        menu_events:
+          type: varchar(255)
+        menu_working_group:
+          type: varchar(255)
+        menu_news:
+          type: varchar(255)
+        menu_useful_information:
+          type: varchar(255)
+        menu_faq:
+          type: varchar(255)
+        menu_visa:
+          type: varchar(255)
+        menu_board:
+          type: varchar(255)
+        menu_contacts:
+          type: varchar(255)
+        menu_partners:
+          type: varchar(255)
+        menu_how_to_join:
+          type: varchar(255)
+        footer_copyright:
+          type: varchar(255)
+        footer_description:
+          type: varchar(255)
+        feedback_title:
+          type: varchar(255)
+        feedback_name:
+          type: varchar(255)
+        feedback_email:
+          type: varchar(255)
+        feedback_text:
+          type: varchar(255)
+        feedback_btn_send:
+          type: varchar(255)
+        feedback_success_title:
+          type: varchar(255)
+        feedback_success_description:
+          type: varchar(255)
+        parrword_recovery_popup_title:
+          type: varchar(255)
+        parrword_recovery_popup_label:
+          type: varchar(255)
+        parrword_recovery_popup_error:
+          type: varchar(255)
+        parrword_recovery_popup_send:
+          type: varchar(255)
+        password_recovery_success_title:
+          type: varchar(255)
+        password_recovery_success_description:
+          type: text
+        parrword_recovery_page_title:
+          type: varchar(255)
+        parrword_recovery_page_new_pass_label:
+          type: varchar(255)
+        parrword_recovery_page_new_pass_error:
+          type: varchar(255)
+        parrword_recovery_page_re_pass_label:
+          type: varchar(255)
+        parrword_recovery_page_re_pass_error:
+          type: varchar(255)
+        parrword_recovery_page_invalid_re_pass_error:
+          type: varchar(255)
+        parrword_recovery_page_send:
+          type: varchar(255)
+        page_not_found_title:
+          type: varchar(255)
+        page_not_found_to_main:
+          type: varchar(255)
+        coordinator:
+          type: varchar(255)
+        sub_menu_aegee:
+          type: varchar(255)
+        sub_menu_partners:
+          type: varchar(255)
+    contacts:
+      columns:
+        title:
+          type: varchar(255)
+        phone_title:
+          type: varchar(255)
+        phone:
+          type: varchar(255)
+        email_title:
+          type: varchar(255)
+        email:
+          type: varchar(255)
+        fb_title:
+          type: varchar(255)
+        fb_link:
+          type: varchar(255)
+        vk_title:
+          type: varchar(255)
+        vk_link:
+          type: varchar(255)
+        youtube_title:
+          type: varchar(255)
+        youtube_link:
+          type: varchar(255)
+        description:
+          type: text
+        board_title:
+          type: varchar(255)
+        previous_board_title:
+          type: varchar(255)
+      abilities:
+        files:
+          board: { sizes: { big: 400x266 }, process: fitOut }
+    metainfo:
+      columns:
+        base_meta_title:
+          type: varchar(255)
+        base_meta_description:
+          type: varchar(255)
+        base_meta_keywords:
+          type: varchar(255)
+        events_meta_title:
+          type: varchar(255)
+        events_meta_description:
+          type: varchar(255)
+        events_meta_keywords:
+          type: varchar(255)
+        news_meta_title:
+          type: varchar(255)
+        news_meta_description:
+          type: varchar(255)
+        news_meta_keywords:
+          type: varchar(255)
+        projects_meta_title:
+          type: varchar(255)
+        projects_meta_description:
+          type: varchar(255)
+        projects_meta_keywords:
+          type: varchar(255)
+        partners_meta_title:
+          type: varchar(255)
+        partners_meta_description:
+          type: varchar(255)
+        partners_meta_keywords:
+          type: varchar(255)
+        visa_meta_title:
+          type: varchar(255)
+        visa_meta_description:
+          type: varchar(255)
+        visa_meta_keywords:
+          type: varchar(255)
+        faq_meta_title:
+          type: varchar(255)
+        faq_meta_description:
+          type: varchar(255)
+        faq_meta_keywords:
+          type: varchar(255)
+        contacts_meta_title:
+          type: varchar(255)
+        contacts_meta_description:
+          type: varchar(255)
+        contacts_meta_keywords:
+          type: varchar(255)
+        working_groups_meta_title:
+          type: varchar(255)
+        working_groups_meta_description:
+          type: varchar(255)
+        working_groups_meta_keywords:
+          type: varchar(255)
+    mainpage:
+      columns:
+        events_title:
+          type: varchar(255)
+        all_events_link:
+          type: varchar(255)
+        news_title:
+          type: varchar(255)
+        member_of_the_month_title:
+          type: varchar(255)
+        member_of_the_month_name:
+          type: varchar(255)
+        member_of_the_month_description:
+          type: text
+        partners:
+          type: varchar(255)
+      abilities:
+        files:
+          member_of_the_month_avatar: { sizes: { big: 300x200 }, process: fitOut }
+    about:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    about_aegee_europe:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    about_aegee_kiev:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    how_to_join:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    events:
+      columns:
+        status_local:
+          type: varchar(255)
+        status_europe:
+          type: varchar(255)
+        start_at:
+          type: varchar(255)
+        finish_at:
+          type: varchar(255)
+        dedline_at:
+          type: varchar(255)
+        fee:
+          type: varchar(255)
+        sub_menu_all:
+          type: varchar(255)
+        sub_menu_european:
+          type: varchar(255)
+        sub_menu_future:
+          type: varchar(255)
+    profile:
+      columns:
+        become_memeber:
+          type: varchar(255)
+        profile:
+          type: varchar(255)
+        first_name:
+          type: varchar(255)
+        last_name:
+          type: varchar(255)
+        email:
+          type: varchar(255)
+        phone:
+          type: varchar(255)
+        address:
+          type: varchar(255)
+        sex:
+          type: varchar(255)
+        female:
+          type: varchar(255)
+        male:
+          type: varchar(255)
+        birthday:
+          type: varchar(255)
+        aegee_card:
+          type: varchar(255)
+        university:
+          type: varchar(255)
+        speciality:
+          type: varchar(255)
+        work_place:
+          type: varchar(255)
+        work_position:
+          type: varchar(255)
+        interests:
+          type: varchar(255)
+        description:
+          type: varchar(255)
+        expirience:
+          type: varchar(255)
+        more:
+          type: varchar(255)
+        why_join:
+          type: varchar(255)
+        how_learned:
+          type: varchar(255)
+        like_to_visit:
+          type: varchar(255)
+        extent_active:
+          type: varchar(255)
+        old_pass:
+          type: varchar(255)
+        new_pass:
+          type: varchar(255)
+        re_pass:
+          type: varchar(255)
+        error_text:
+          type: varchar(255)
+        save:
+          type: varchar(255)
+        registration:
+          type: varchar(255)
+        load_photo:
+          type: varchar(255)
+        registration_letter:
+          type: text
+        change_pass:
+          type: varchar(255)
+        success_registration_title:
+          type: varchar(255)
+        success_registration_description:
+          type: text
+indexes:
+  primary:
+    columns:
+      - id
+    type: primary
+  unique:
+    columns:
+      - slug
+      - lang
+    type: unique

@@ -1,0 +1,39 @@
+table: social_users
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  id_social:
+    type: varchar(255)
+  first_name:
+    type: varchar(255)
+  last_name:
+    type: varchar(255)
+  sex:
+    type: char(20)
+  social_key:
+    type: char(3)
+  email:
+    type: varchar(255)
+  avatar_link:
+    type: varchar(255)
+  birthday:
+    type: date
+  more_info:
+    type: text
+  last_login:
+    type: datetime
+  _created_at:
+    type: datetime
+    default: '#sql#NOW()'
+  _updated_at:
+    type: datetime
+    default: '#sql#NOW()'
+  hash:
+    type: varchar(255)
+indexes:
+  primary:
+    columns:
+      - id
+abilities:
+  timetrack: true

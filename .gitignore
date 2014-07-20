@@ -1,0 +1,8 @@
+.idea/
+.DS_Store
+libs/slDB/bases/
+config/local/
+config/settings.yml
+tmp/
+framework/engine/.autoload
+web/upload

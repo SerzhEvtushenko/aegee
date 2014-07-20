@@ -1,0 +1,56 @@
+table: boards
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  name:
+    type: varchar(255)
+  description:
+    type: text
+  id_user:
+    type: 'int(11) unsigned'
+  id_category:
+    type: 'int(11) unsigned'
+  phone:
+    type: varchar(255)
+  email:
+    type: varchar(255)
+  _position:
+    type: 'int(11) unsigned'
+    default: '0'
+  years:
+    type: varchar(255)
+  is_honorary_member:
+    type: tinyint
+    default: 0
+relations:
+  user:
+    type: many_to_one
+    model: AclUser
+abilities:
+  sort: true
+  mlt:
+    columns:
+      - name
+      - description
+  files:
+    avatar_in:
+      sizes:
+        small: 150x150
+        big: 300x450
+      process: fitOut
+    avatar_out:
+      sizes:
+        small: 150x150
+        big: 300x450
+      process: fitOut
+indexes:
+  primary:
+    columns:
+      - id
+  id_user:
+    type: simple
+    columns: id_user
+  id_category:
+    type: simple
+    columns: id_category

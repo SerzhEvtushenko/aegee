@@ -1,0 +1,24 @@
+.inline-block		{ display:inline-block;zoom:1;//display:inline; }
+.none				{ display:none !important; }
+
+.hidden 			{ visibility:hidden !important; }
+.visible			{ visibility:visible !important; }
+
+.clear				{ clear:both; height:0; font-size:0; line-height:0; overflow:hidden; display:block; }
+.fleft				{ float:left !important; }
+.fright				{ float:right !important; }
+
+.vat                { vertical-align:top !important; }
+.vam                { vertical-align:middle !important; }
+.vab                { vertical-align:bottom !important; }
+
+.block{display: block !important}
+
+.color_aqua{ color: #25c8ff }
+
+/* margin-left */
+.ml0{margin-left: 0 !important;}
+
+/* width */
+.w250{width: 250px !important;}
+.clear { clear:both;}

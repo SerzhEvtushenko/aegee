@@ -1,0 +1,9 @@
+routing:
+  defaultController:    Index
+  controllerSuffix:     Config
+  prefix:               /
+  modes:                [web]
+view:
+  layout: _layout.tpl
+  engine: FTLEngine
+  format: html

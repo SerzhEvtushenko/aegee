@@ -1,0 +1,18 @@
+
+.ffacl_login_form {
+    font-size: 12px;
+}
+.ffacl_login_form label {
+    width: 200px;
+    float:left;
+    clear:left;
+    margin-top: 4px;
+}
+.ffacl_login_form input {
+    width: 200px;
+    float: left;
+    margin-left :10px;
+}
+.ffacl_login_form .submit {
+    font-size: 12px;
+}

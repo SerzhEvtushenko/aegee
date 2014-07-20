@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../../../../../../web/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzFMBBrntOh5tSEdJ1aeglyY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../../../../../../web/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTVMBBrntOh5tSEdJ1aeglyY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(../../../../../../web/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxtmPLRxFEEE7es7tC2X2zcQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(../../../../../../web/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxnAs8Wu_YJ_iPyCHUNPN6JQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(../../../../../../web/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxq_HxB5EqkbxBlcMADog12k.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../../../../../../web/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSlMBBrntOh5tSEdJ1aeglyY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../../../../../../web/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBhsKoB_2lT5BZsH32Y4e7So.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../../../../../../web/fonts/opensans/v6/K88pR3goAWT7BTt32Z01m7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.sidebar-nav {
+    padding: 9px 0;
+}
+.table td {
+    vertical-align: middle;
+}
+.table_list {
+    color: #555;
+}
+.table_list .table_cell_title {
+    color: #333;
+    font-size: 1.2em;
+    width: 300px;
+}
+.table_list .table_cell_date {
+    width: 70px;
+    font-size: 0.9em;
+}
+.table_list .table_cell_id {
+    width: 10px;
+    font-size: 0.9em;
+}

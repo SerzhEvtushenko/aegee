@@ -1,0 +1,4 @@
+#!/usr/bin/env php
+<?php
+__SL_INIT__
+SL::loadApplication(slRouter::getInstance()->detectApplication())->run();

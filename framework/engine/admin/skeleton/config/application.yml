@@ -1,0 +1,13 @@
+routing:
+  class:                slRouter
+  resolver:             slAdminResolver
+  defaultController:    Index
+  controllerSuffix:     Controller
+  prefix:               /
+  modes:                [web]
+view:
+  layout: _layout.tpl
+  engine: FTLEngine
+  format: html
+mlt:
+  disabled: true

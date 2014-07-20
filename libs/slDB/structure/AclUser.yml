@@ -1,0 +1,102 @@
+table: acl_users
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+    not_null: true
+  first_name:
+    type: varchar(255)
+    not_null: true
+  last_name:
+    type: varchar(255)
+    not_null: true
+  title:
+    type: varchar(255)
+  email:
+    type: varchar(255)
+    not_null: true
+    validation:
+      unique: true
+      email: true
+  aegee_card:
+    type: varchar(255)
+  phone:
+    type: varchar(255)
+    not_null: true
+  post_address:
+    type: varchar(255)
+  sex:
+    type: char(8)
+  university:
+    type: varchar(255)
+  speciality:
+    type: varchar(255)
+  birthday:
+    type: date
+  password:
+    type: varchar(255)
+  last_login:
+    type: datetime
+    default: null
+  status:
+    type: tinyint
+  enable_subscription:
+    type: tinyint
+    default: 0
+  is_approved_by_hr:
+    type: tinyint
+    default: 0
+  interests:
+    type: mediumtext
+  why_join:
+    type: mediumtext
+  how_learned:
+    type: mediumtext
+  member_since:
+    type: date
+  member_until:
+    type: date
+  register_date:
+    type: datetime
+    default: '#sql#NOW()'
+  _updated_at:
+    type: datetime
+    default: '#sql#NOW()'
+  work_place:
+    type: varchar(255)
+  work_position:
+    type: varchar(255)
+  other_experience:
+    type: varchar(255)
+  describe_yourself:
+    type: mediumtext
+  know_more:
+    type: mediumtext
+  like_to_visit:
+    type: varchar(255)
+  extent_active:
+    type: mediumtext
+  hash:
+    type: varchar(255)
+  facebook_link:
+    type: varchar(255)
+  vk_link:
+    type: varchar(255)
+abilities:
+  files:
+    avatar:
+      sizes:
+        small: 150x150
+        big: 300x300
+      process: fitOut
+indexes:
+  primary:
+    columns:
+      - id
+    type: primary
+  status:
+    type: simple
+    columns: status
+  is_approved_by_hr:
+    type: simple
+    columns: is_approved_by_hr

@@ -1,0 +1,15 @@
+scope: frontend
+usnauthorized:
+  call:
+    - SocialUser
+    - Unauthorized
+tables:
+  users: social_users
+  login_field: email
+view:
+  templates:
+    login: "_login.tpl"
+    rights: "_have_no_rights.tpl"
+    scope: frontend
+    render: layouted
+model: SocialUser

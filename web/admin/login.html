@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Unicorn Admin</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="css/solve.login.css" />
+    </head>
+    <body class="clearfix">
+        <div id="logo">
+            Admin Panel
+        </div>
+        <div id="loginbox">            
+            <form id="loginform" class="form-vertical" action="">
+				<p>Enter username and password to continue.</p>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span><input type="text" placeholder="Username" />
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-lock"></i></span><input type="password" placeholder="Password" />
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-error">
+                    <button data-dismiss="alert" class="close">×</button>
+                    <strong>Error!</strong> The daily cronjob has failed.
+                </div>
+                <div class="form-actions">
+                    <span class="pull-left"><a href="login_recover.html" class="flip-link">Lost password?</a></span>
+                    <span class="pull-right"><input type="submit" class="btn btn-inverse" value="Login" /></span>
+                </div>
+            </form>
+        </div>
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/solve.login.js"></script>
+    </body>
+</html>

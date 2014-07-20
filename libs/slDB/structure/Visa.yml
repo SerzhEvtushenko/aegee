@@ -1,0 +1,25 @@
+table: visas
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  title:
+    type: varchar(255)
+    not_null: true
+  description:
+    type: text
+  slug:
+    type: varchar(255)
+  _position:
+    type: 'int(11) unsigned'
+    default: '0'
+abilities:
+  sort: true
+  mlt:
+    columns:
+      - title
+      - description
+indexes:
+  primary:
+    columns:
+      - id

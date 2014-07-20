@@ -1,0 +1,21 @@
+table: revcoms
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  id_user:
+    type: 'int(11) unsigned'
+  phone:
+    type: varchar(255)
+  email:
+    type: varchar(255)
+  _position:
+    type: 'int(11) unsigned'
+    default: '0'
+indexes:
+  primary:
+    columns:
+      - id
+  id_user:
+    type: simple
+    columns: id_user

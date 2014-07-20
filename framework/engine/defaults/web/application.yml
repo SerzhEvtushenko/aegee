@@ -1,0 +1,11 @@
+routing:
+  class:                slRouter
+  resolver:             slWebResolver
+  defaultController:    index
+  controllerSuffix:     Controller
+  prefix:               /
+  modes:                [web]
+view:
+  layout: _layout.tpl
+  engine: FTLEngine
+  format: html

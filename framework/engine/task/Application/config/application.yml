@@ -1,0 +1,9 @@
+routing:
+  resolver:             slWebConsoleResolver
+  defaultController:    Index
+  controllerSuffix:     Task
+  prefix:               /
+  modes:                [console,web]
+view:
+  engine: ConsoleEngine
+  format: raw

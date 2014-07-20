@@ -1,0 +1,894 @@
+modules:
+  users:
+    title: Користувачі
+    type: List
+    model: AclUser
+    per_page: 15
+    deleted: true
+    sort: last_name asc
+    where: 'status>0'
+    filter:
+      firts_name:
+        field: first_name
+        title: Ім'я
+        type: text
+      last_name:
+        field: last_name
+        title: Прізвище
+        type: text
+      email:
+        field: email
+        title: Email
+        type: text
+      status:
+        field: status
+        title: Статус
+        type: select
+
+    fields:
+      id: ID
+      first_name:
+        title: Ім'я
+        type: text
+      last_name:
+        title: Прізвище
+        type: text
+#      login: Логин
+      card_number: Номер aegee-картки 
+      password:
+        title: Пароль
+        type: password
+      email: Email
+      phone: Телефон
+      sex:
+        title: Стать
+        type: select
+        field_values:
+          -
+            id: 'male'
+            title: Чол
+          -
+            id: 'female'
+            title: Жін
+      avatar:
+        title: Фото
+        type: image
+        description: size: 300x300px. JPG, PNG
+      post_address: Адреса
+      birthday:
+        title: Дата народження
+        type: date
+      last_login:
+        title: Останя авторизація на сайті
+        type: date
+      status:
+        title: Статус
+        type: select
+        field_values:
+          -
+            id: '1'
+            title: Активний мембер
+          -
+            id: '2'
+            title: Не активний мембер
+          -
+            id: '3'
+            title: Заблокований
+      enable_subscription:
+        title: Підписан на розсилку
+        type: checkbox
+      is_approved_by_hr:
+        title: Підтверджений HR
+        type: checkbox
+      register_date:
+        title: Дата реєстрації
+        type: date
+      membe_since:
+        title: Мембер з
+        type: date
+      member_until:
+        title: Мембер по
+        type: date
+      interests:
+        title: Інтереси
+        type: area
+      why_join:
+        title: Чому приєднався
+        type: area
+      how_learned:
+        title: Як дізнався
+        type: area
+      university:
+        title: Університет
+      speciality:
+        title: Спеціальність
+      work_place:
+        title: Місце работи
+      work_position:
+        title: Посада
+      other_experience:
+        title: Інший досвід
+      describe_yourself:
+        title: Опишіть себя
+        type: area
+      know_more:
+        title: Більше
+        type: area
+      like_to_visit:
+        title: Хочу побувати
+        type: area
+      extent_active:
+        title: Ступінь активності
+        type: area
+      rights:
+        type: rights_list
+        title: Rightrs
+      facebook_link: Посиланя на facebook
+      vk_link: Посиланя на vk
+    actions:
+      default:
+        show: [login, first_name, last_name, email, status, card_number, register_date]
+      export: true
+
+  events:
+    title: Події
+    type: List
+    model: Event
+    sort: 'id DESC'
+    per_page: 15
+    tabs:
+      gallery:
+        title: Галерея
+        plugin: gallery
+
+    filter:
+      title:
+        field: title
+        title: Назва
+        type: text
+      is_active:
+        field: is_active
+        title: Активна
+        type: checkbox
+      show_on_main:
+        field: show_on_main
+        title: На головній
+        type: checkbox
+    fields:
+      id: ID
+      title: Назва
+      short_description:
+        title: Короткий опис
+        type: area
+      description:
+        title: Повний опис
+        type: rich
+      slug: 
+        title: Посилання
+        description:  приклад eagee-new-year-2014
+      
+      fee:
+        title: Оплата
+        type: text
+      user:
+        title: Координатор
+        type: select
+      id_category:
+        title: Категорія
+        type: select
+        field_values:
+          -
+            id: 1
+            title: Local
+          -
+            id: 2
+            title: Evro
+      currency:
+        title: Валюта
+        type: select
+        field_values:
+          -
+            id: '1'
+            title: Грн
+          -
+            id: '2'
+            title: Евро
+      start_date:
+        title: Дата початку
+        type: date
+      end_date:
+        title: Дата завершеня
+        type: date
+        description: Заповнювати якщо більше одного дня
+      dedline:
+        title: Дедлайн
+        type: date
+        description: Заповнювати якщо потрібно
+      is_active:
+        title: Опублікувати
+        type: checkbox
+      show_on_main:
+        title: Показувати на головній
+        type: checkbox
+      tags:
+        title: Теги
+        type: text
+        description: 'Кожен тег починається з символа "#". Без пробілів і ком'
+      _created_at:
+        title: Created at
+        type: date
+      main_image:
+        title: Головне зображеня
+        type: image
+        description: size: 300x200px. JPG, PNG
+    actions:
+      default:
+        show: [title, start_date,user, is_active, show_on_main, main_image]
+
+  news:
+    title: Новини
+    type: List
+    sort: '_created_at DESC'
+    model: News
+    per_page: 15
+    tabs:
+      gallery:
+        title: Галерея
+        plugin: gallery
+
+    fields:
+      id: ID
+      title: Назва
+      slug: Посиланя
+      short_description:
+        title: Короткий опис
+        type: area
+      description:
+        title: Опис
+        type: rich
+      is_active:
+        title: Опублікувати
+        type: checkbox
+      id_category:
+        title: Категорія
+        type: select
+        field_values:
+          -
+            id: '0'
+            title: AEGEE
+          -
+            id: '1'
+            title: Партнери
+
+      _created_at:
+        title: Дата створеня
+        type: date
+      tags:
+        title: Теги
+        type: text
+        description: 'Кожен тег починається з символа "#". Без пробілів і ком'
+      main_image:
+        title: Головне зображеня
+        type: image
+        description: size: 300x200px. JPG, PNG
+
+    actions:
+      default:
+        show: [title, short_description, _created_at, slug, is_active, main_image]
+
+  projects:
+    title: Проекти
+    type: List
+    sort: '_position ASC'
+    sort_buttons: true
+    tabs:
+      gallery:
+        title: Галерея
+        plugin: gallery
+
+    model: Project
+    fields:
+      id: ID
+      title: Назва
+      user:
+        title: Координатор
+        type: select
+      is_active:
+        title: Активний
+        type: checkbox
+      slug:
+        title: Посиланя
+        type: text
+      short_description:
+        title: Короткий опис
+        type: area
+      description:
+        title: Опис
+        type: rich
+      main_image:
+        title: Зображення
+        type: image
+        description: size: 300x265px JPG, PNG
+    actions:
+      default:
+        show: [title, slug, user, main_image]
+
+
+  board:
+    title: Борд
+    type: Board
+    model: Board
+    sort: '_position ASC'
+    per_page: 30
+    sort_buttons: true
+    filter:
+      id_user:
+        field: id_user
+        title: Користувач
+        type: text
+
+      years:
+        field: years
+        title: Роки
+        type: text
+      email:
+        field: email
+        title: Email
+        type: text
+      phone:
+        field: phone
+        title: Телефон
+        type: text
+    fields:
+      id: ID
+      id_user:
+        title: Користувач
+        type: select
+        model: AclUser
+        raw: true
+      name:
+        title: Ім'я
+        type: text
+      description:
+        title: Опис
+        type: rich
+      phone: Телефон
+      email: Email
+      years:
+        title: Роки
+        type: text
+        description: Без пробілів через "-" Приклад: 2012-2013
+      id_category:
+        title: Позиція
+        type: select
+        field_values:
+          -
+            id: '1'
+            title: President
+          -
+            id: '2'
+            title: Public Relations
+          -
+            id: '3'
+            title: Fund Raising
+          -
+            id: '4'
+            title: Secretary
+          -
+            id: '5'
+            title: Treasurer
+          -
+            id: '6'
+            title: Human Resources
+          -
+            id: '7'
+            title: IT
+          -
+            id: '8'
+            title: Projects
+          -
+            id: '9'
+            title: Events
+          -
+            id: 10
+            title: Revcom
+      is_honorary_member:
+        title: Почесний мембер
+        type: checkbox
+      avatar_in:
+        title: Аватар в AEGEE
+        type: image
+      avatar_out:
+        title: Аватар не в AEGEE
+        type: image
+
+    actions:
+      default:
+        hide: [id, is_honorary_member, email, name, description,avatar_in,avatar_out]
+
+  faqs:
+    title: Питання та відповіді
+    type: List
+    model: Faq
+    fields:
+      id: ID
+      question:
+        title: Питання
+        type: area
+      answer:
+        title: Відповідь
+        type: area
+      slug:
+        title: Посилання
+        type: text
+      is_active:
+        title: Активний
+        type: checkbox
+    actions:
+      default:
+        show: [id, question, slug]
+
+  feedbacks:
+    title: Зворотній зв'язок
+    type: List
+    model: Feedback
+    fields:
+      id: ID
+      email: Email
+      name: Ім'я
+      content:
+        title: Текст
+        type: area
+      is_processed:
+        title: Опрацьован
+        type: checkbox
+      _created_at:
+        title: Дата
+        type: date
+    actions:
+      default:
+        show: [id, email, name, is_processed]
+
+  partners:
+    title: Партнери
+    type: List
+    sort: '_position ASC'
+    sort_buttons: true
+    model: Partner
+    fields:
+      id: ID
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+      website: Сайт
+      category:
+        title: Категорія
+        type: select
+        field_values:
+          -
+            id: '1'
+            title: Спонсори
+          -
+            id: '2'
+            title: Партнери
+      image:
+        title: Зображення
+        type: image
+        description: max width: 200px. max height: 130px. JPG, PNG
+    actions:
+      default:
+        hide: [id, description]
+
+  visa:
+    title: Віза
+    type: List
+    sort: '_position ASC'
+    sort_buttons: true
+    model: Visa
+    fields:
+      id: ID
+      title: Назва розділу
+      slug: Посиланя
+      description:
+        title: Опис
+        type: rich
+    actions:
+      default:
+        show: [title, slug]
+
+
+
+  siders:
+    title: Слайдер на головній
+    type: List
+    model: HomepageSlider
+    sort: 'homepage_sliders._position ASC'
+    sort_buttons: true
+    fields:
+      id: ID
+      description:
+        title: Опис
+        type: area
+      is_active:
+        title: Активний
+        type: checkbox
+      image:
+        title: Зображення
+        type: image
+        description: zise: 950x350 JPG, PNG
+    actions:
+      default:
+        hide: [id]
+
+  texts:
+    title: Переклади
+    sub_menu:
+      general:
+        title: Загальні
+      mainpage:
+        title: Головна сторінка
+      contacts:
+        title: Контакти
+      metainfo:
+        title: Метаданні
+      eventsmlt:
+        title: Події
+      profile:
+        title: Профайл
+
+
+  metainfo:
+    title: Метаданні
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: metainfo
+    fields:
+      hr0:
+        title: Головна сторінка
+        type: hr_title
+      base_meta_title: Meta title
+      base_meta_description: Meta description
+      base_meta_keywords: Meta keywords
+      hr1:
+        title: Події
+        type: hr_title
+      events_meta_title: Meta title
+      events_meta_description: Meta description
+      events_meta_keywords: Meta keywords
+      hr2:
+        title: Новини
+        type: hr_title
+      news_meta_title: Meta title
+      news_meta_description: Meta description
+      news_meta_keywords: Meta keywords
+      hr4:
+        title: Партнери
+        type: hr_title      
+      partners_meta_title: Meta title
+      partners_meta_description: Meta description
+      partners_meta_keywords: Meta keywords
+      hr5:
+        title: Віза
+        type: hr_title      
+      visa_meta_title: Meta title
+      visa_meta_description: Meta description
+      visa_meta_keywords: Meta keywords
+      hr6:
+        title: Питання та відповіді
+        type: hr_title      
+      faq_meta_title: Meta title
+      faq_meta_description: Meta description
+      faq_meta_keywords: Meta keywords
+      hr7:
+        title: Контакти
+        type: hr_title      
+      contacts_meta_title: Meta title
+      contacts_meta_description: Contactsmeta_description
+      contacts_meta_keywords: Meta keywords
+      hr8:
+        title: Рабочі групи
+        type: hr_title      
+      working_groups_meta_title: Meta title
+      working_groups_meta_description: Meta description
+      working_groups_meta_keywords: Meta keywords
+      hr3:
+        title: Проекти
+        type: hr_title      
+      projects_meta_title: Meta title
+      projects_meta_description: Meta description
+      projects_meta_keywords: Meta keywords
+
+  general:
+    title: Загальні
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: general
+    fields:
+      hr1:
+        type: hr_title
+        title: Хедер    
+      header_logo_alt_text: Logo alt text
+      header_slogan: Slogan alt text
+      header_lang_ua: Lang ua 
+      header_lang_en: Lang en 
+      header_feedback: Feedback 
+      header_registration: Registration 
+      header_login: Login 
+      header_profile: Profile 
+      header_exit: Exit 
+      header_form_login: Form login 
+      header_form_pass: Form password 
+      header_form_error: Form error 
+      header_form_btn: Form btn send
+
+      header_recover_password: Recover password
+      header_facebook_link: Facebook group link
+      header_vk_link: Vk group link
+      header_youtube_link:  YouTube canal link
+      hr2:
+        type: hr_title
+        title: Меню
+      menu_main: Main page 
+      menu_about: About 
+      menu_what_is_aegee: What is AEGEE 
+      menu_aegee_europe: AEGEE-EUROPE 
+      menu_aegee_kyiv: AEGEE-Kyiv 
+      menu_activity: Activity 
+      menu_projects: Projects 
+      menu_events: Events 
+      menu_working_group: Working group 
+      menu_news: News 
+      menu_useful_information: Useful information 
+      menu_faq: Faq 
+      menu_visa: Visa 
+      menu_board: Board 
+      menu_contacts: Contacts 
+      menu_partners: Partners 
+      menu_how_to_join: How to join
+      hr3:
+        type: hr_title
+        title: Feedback (popup)
+      
+      feedback_title: Title 
+      feedback_name: Name 
+      feedback_email: Email 
+      feedback_text: Text 
+      feedback_btn_send: Btn send 
+      feedback_success_title: Title (success)
+      feedback_success_description: Description (success)
+
+      hr4:
+        type: hr_title
+        title: Футер
+
+      footer_description: Описание
+      footer_copyright: Copyright
+
+      h5:
+        title: Попап восстановления пароля
+        type: hr_title
+      parrword_recovery_popup_title: Заголовок
+      parrword_recovery_popup_label: Подпись к полю
+      parrword_recovery_popup_error: Текст ошибки
+      parrword_recovery_popup_send: Кнопка отправить
+      password_recovery_success_title: Заголовок о удачной отправке
+      password_recovery_success_description:
+        title: Сообщение о удачной отправке
+        type: area
+
+      h6:
+        title: Восстановление пароля
+        type: hr_title
+      parrword_recovery_page_title: Заголовок
+      parrword_recovery_page_new_pass_label: Новый пароль (подпись)
+      parrword_recovery_page_new_pass_error: Новый пароль (ошибка)
+      parrword_recovery_page_re_pass_label: Подтверждение пароля (подпись)
+      parrword_recovery_page_re_pass_error: Подтверждение пароля (ошибка)
+      parrword_recovery_page_invalid_re_pass_error: Ошибка несовпадения паролей
+      parrword_recovery_page_send: Кнопка отправить
+      h7:
+        title: Разное
+        type: hr_title
+      coordinator: Координатор
+      page_not_found_title: 404 Тайтл
+      page_not_found_to_main: 404 На главную
+      h8:
+        title: Новини підменю
+        type: hr_title
+      sub_menu_aegee: AEGEE
+      sub_menu_partners: Партнери
+
+  eventsmlt:
+    title: Події
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: events
+    fields:
+      sub_menu_all: Всі (підменю)
+      sub_menu_european: Європейські (підменю)
+      sub_menu_future: Локальні (підменю)
+      status_local: Статус локальний
+      status_europe: Статус європейський
+      start_at: Початок
+      finish_at: Завершення
+      dedline_at: Дедлайн
+      fee: Внесок
+
+  profile:
+    title: Профайл
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: profile
+    fields:
+      become_memeber: Стати членом
+      profile: Профайл
+      first_name: Ім'я
+      last_name: Прізвище
+      email: Email
+      phone: Телефон
+      address: Адреса
+      sex: Стать
+      female: Жіноча
+      male: Чоловіча
+      birthday: Дата народження
+      aegee_card: Номер картки AEGEE
+      university: Університет
+      speciality: Спеціальність
+      work_place: Місце работи
+      work_position: Позиція
+      interests: Інтереси
+      description: Опиши себе
+      expirience: Інший досвід
+      more: Написати більше
+      why_join: Чому приєднався
+      how_learned: Як дізнався
+      like_to_visit: Хоче побувати
+      extent_active: Ступінь активності
+      old_pass: Старий пароль
+      new_pass: Новий пароль
+      re_pass: Підтвердження пароля
+      error_text: Текст помилки
+      save: Кнопка зберегти
+      registration: Кнопка зареєструватись
+      load_photo: Завантажити фото
+      change_pass: Змінити пароль
+      registration_letter:
+        title: Лист реєстрації
+        type: area
+        description: Використовуйте %name, %email і  %password щоб вставити в тіло листа ім'я, email і пароль користувача
+      success_registration_title: Заголовок попапа про успішну реєстрацію
+      success_registration_description:
+        title: Контент попапа про успішну реєстрацію
+        type: area
+
+
+
+  contacts:
+    title: Контакти
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: contacts
+    fields:
+      title: Заголовок
+      phone_title: Телефон (переклад)
+      phone: Номер телефону
+      email_title: Email (переклад)
+      email: Email
+      fb_title: Приєднуйтесь до нас на фб
+      fb_link: Посиланя на facebook
+      vk_title: Приєднуйтесь до насна вк
+      vk_link: Посиланя на vk
+      youtube_title: Приєднуйтесь до нас на youtube
+      youtube_link: Посиланя на youtube
+      description:
+        title: Опис
+        type: area
+      board_title: Борт тайтл
+      previous_board_title: Минулий борд тайтл
+      board:
+        title: Фото борда
+        type: image
+    actions:
+      default:
+        hide: [lat, lng, zoom]
+
+  mainpage:
+    title: Головна сторінка
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: mainpage
+    fields:
+      events_title: Події (тайтл)
+      all_events_link: Все події (Посиланя)
+      news_title: Новини (тайтл)
+      partners: Партнери (тайтл)
+      hr1:
+        type: hr_title
+        title: Блок мембер місяця
+      member_of_the_month_title: Тайтл
+      member_of_the_month_name: Ім'я мембера
+      member_of_the_month_description:
+        title: Опис блока
+        type: area
+      member_of_the_month_avatar:
+        title: Фото
+        type: image
+        description: size: 300x200px. JPG, PNG
+
+  about:
+    title: About
+    type: LangStatic
+    model: StaticPage
+    hide_from_menu: true
+    select:
+      slug: about
+    fields:
+      title: Title
+      description:
+        title: Text
+        type: rich
+
+  aboutaegeekiev:
+    title: About AEGEE Kyiv
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: about_aegee_kiev
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  aboutaegeeeurope:
+    title: About AEGEE Europe
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: about_aegee_europe
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  howtojoin:
+    title: How to join
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: how_to_join
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+
+  pages:
+    title: Текстові сторінки
+    sub_menu:
+      about:
+        title: About AEGEE
+      aboutaegeeeurope:
+        title: About AEGEE Europe
+      aboutaegeekiev:
+        title: About AEGEE Kyiv
+      howtojoin:
+        title: How to join

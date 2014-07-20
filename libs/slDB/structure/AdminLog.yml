@@ -1,0 +1,30 @@
+table: admin_logs
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  id_object:
+    type: 'int(11) unsigned'
+  model:
+    type: varchar(255)
+  data:
+    type: blob
+  id_user:
+    type: 'int(11) unsigned'
+  lang:
+    type: char(5)
+  operation:
+    type: varchar(255)
+  ip:
+    type: varchar(255)
+  device:
+    type: char(30)
+  browser:
+    type: varchar(255)
+  datetime:
+    type: datetime
+    default: '#sql#NOW()'
+indexes:
+  primary:
+    columns:
+      - id

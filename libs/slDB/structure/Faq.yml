@@ -1,0 +1,29 @@
+table: faqs
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  slug:
+    type: varchar(255)
+  question:
+    type: text
+    not_null: true
+  answer:
+    type: text
+  _position:
+    type: 'int(11) unsigned'
+    default: '0'
+  is_active:
+    type: tinyint
+    default: 0
+abilities:
+  sort: true
+  mlt:
+    columns:
+      - question
+      - answer
+      - is_active
+indexes:
+  primary:
+    columns:
+      - id

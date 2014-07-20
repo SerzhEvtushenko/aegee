@@ -1,0 +1,20 @@
+acl_rights:
+  -
+    id: root
+    title: "Super user"
+  -
+    id: grant
+    title: "Grant option"
+acl_users:
+  -
+    id: 1
+    login: root
+    password: "c4ca4238a0b923820dcc509a6f75849b"
+  -
+    id: 2
+    login: user
+    password: "c4ca4238a0b923820dcc509a6f75849b"
+acl_users_rights:
+  -
+    id_user: 1
+    id_right: "root"

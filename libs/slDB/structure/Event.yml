@@ -1,0 +1,92 @@
+table: events
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  title:
+    type: varchar(255)
+    not_null: true
+  description:
+    type: text
+  short_description:
+    type: varchar(255)
+  slug:
+    type: varchar(255)
+    not_null: true
+    unique: true
+  fee:
+    type: 'int(11) unsigned'
+  id_coordinator:
+    type: 'int(11) unsigned'
+  id_category:
+    type: 'int(11) unsigned'
+  currency:
+    type: tinyint
+  start_date:
+    type: datetime
+  end_date:
+    type: datetime
+  dedline:
+    type: datetime
+  is_active:
+    type: tinyint
+    default: 0
+  show_on_main:
+    type: tinyint
+    default: 0
+  tags:
+    type: varchar(255)
+  _created_at:
+    type: datetime
+    default: '#sql#NOW()'
+  _updated_at:
+    type: datetime
+    default: '#sql#NOW()'
+  _meta_title:
+    type: varchar(255)
+  _meta_description:
+    type: varchar(255)
+  _meta_keywords:
+    type: varchar(255)
+abilities:
+  timetrack: true
+  metainfo: true
+  mlt:
+    columns:
+      - title
+      - description
+      - short_description
+      - _meta_title
+      - _meta_description
+      - _meta_keywords
+      - is_active
+  files:
+    main_image:
+      sizes:
+        big: 400x265
+        small: 300x200
+      process: fitOut
+  gallery:
+    single: true
+    sizes:
+      small:
+        size: 175x150
+        process: fitOut
+relations:
+  user:
+    model: AclUser
+    type: many_to_one
+    local_field: id_coordinator
+indexes:
+  primary:
+    columns:
+      - id
+  slug:
+    type: simple
+    columns: slug
+  is_active:
+    type: simple
+    columns: is_active
+  id_category:
+    type: simple
+    columns: id_category

@@ -1,0 +1,5 @@
+view:
+  templates:
+    login: "_login.tpl"
+    rights: "_have_no_rights.tpl"
+    common: true

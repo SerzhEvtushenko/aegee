@@ -1,0 +1,58 @@
+table: projects
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  title:
+    type: varchar(255)
+    not_null: true
+  id_coordinator:
+    type: 'int(11) unsigned'
+  slug:
+    type: varchar(255)
+    not_null: true
+  short_description:
+    type: text
+  is_active:
+    type: tinyint
+    default: 0
+  description:
+    type: text
+  _position:
+    type: 'int(11) unsigned'
+    default: '0'
+  _meta_title:
+    type: varchar(255)
+  _meta_description:
+    type: varchar(255)
+  _meta_keywords:
+    type: varchar(255)
+relations:
+  user:
+    model: AclUser
+    type: many_to_one
+    local_field: id_coordinator
+abilities:
+  metainfo: true
+  files:
+    main_image:
+      sizes:
+        big: 300x265
+      process: fitIn
+  sort: true
+  mlt:
+    columns:
+      - title
+      - description
+      - is_active
+      - short_description
+  gallery:
+    single: true
+    sizes:
+      small:
+        size: 175x150
+        process: fitOut
+indexes:
+  primary:
+    columns:
+      - id

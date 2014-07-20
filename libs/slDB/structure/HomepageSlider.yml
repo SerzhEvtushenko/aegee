@@ -1,0 +1,26 @@
+table: homepage_sliders
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  description:
+    type: varchar(255)
+  is_active:
+    type: tinyint
+    default: 0
+  _position:
+    type: 'int(11) unsigned'
+    default: '0'
+abilities:
+  sort: true
+  mlt:
+    columns:
+      - description
+  files:
+    image:
+      sizes:
+        main: 950x350
+indexes:
+  primary:
+    columns:
+      - id

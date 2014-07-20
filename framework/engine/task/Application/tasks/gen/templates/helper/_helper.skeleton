@@ -1,0 +1,13 @@
+<?php
+
+Class ftlHelper__NAME__ extends ftlBlock {
+
+    protected $_is_inline = true;
+
+    public function process($params) {
+        $res = '';
+
+        return $res;
+    }
+
+}
