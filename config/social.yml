@@ -1,0 +1,40 @@
+environments:
+  "aegee.local":
+      FB_APP_ID: '330907703715895'
+      FB_APP_SECRET_KEY: '786332c516a4ef05f5763d3a469b8c72'
+
+      VK_APP_ID: "4195102"
+      VK_APP_SECRET_KEY: 'Bup3XwYJf7eaXKOLqZue'
+
+  "ak.youshido.com":
+      FB_APP_ID: '1390523171189870'
+      FB_APP_SECRET_KEY: '02d28d66939a7c0f17cb1315c97b8e92'
+
+      VK_APP_ID: "4195106"
+      VK_APP_SECRET_KEY: '0qlBQnodW52oRD2SMNCM'
+
+  "aegee.kiev.ua":
+      FB_APP_ID: '669422729748723'
+      FB_APP_SECRET_KEY: '032e5d11fd2104cd6046c1ce62c4d2d6'
+
+      VK_APP_ID: "4195109"
+      VK_APP_SECRET_KEY: '5yr0NZeo9QxylylWBhnV'
+
+SETTINGS_FB: 'read_stream,email,publish_stream,'
+SETTINGS_VK: ''
+FIELDS_VK: 'uid, first_name, last_name,photo,photo_200,photo_100,photo_big,sex,bdate'
+
+
+FB_GROUP_LINK: 'http://www.facebook.com/aegee.kyiv'
+
+SHARE_IMAGE: 'images/share.jpg'
+
+share_title: 'AEGEE'
+share_description: 'AEGEE'
+
+
+
+
+
+
+
