@@ -64,18 +64,31 @@ abilities:
           type: varchar(255)
         menu_aegee_kyiv:
           type: varchar(255)
+        menu_dictionary:
+          type: varchar(255)
         menu_activity:
           type: varchar(255)
         menu_projects:
           type: varchar(255)
         menu_events:
           type: varchar(255)
+        menu_calendar:
+          type: varchar(255)
         menu_working_group:
           type: varchar(255)
         menu_news:
           type: varchar(255)
+        menu_members:
+          type: varchar(255)
+        menu_members_of_the_month:
+          type: varchar(255)
+        menu_aegee_today:
+          type: varchar(255)
+        menu_traveling_report:
+          type: varchar(255)
         menu_useful_information:
           type: varchar(255)
+
         menu_faq:
           type: varchar(255)
         menu_visa:
@@ -88,6 +101,22 @@ abilities:
           type: varchar(255)
         menu_how_to_join:
           type: varchar(255)
+
+        menu_su:
+          type: varchar(255)
+        menu_our_su:
+          type: varchar(255)
+        menu_su_abroad:
+          type: varchar(255)
+        menu_about_ukraine:
+          type: varchar(255)
+        menu_travel_tips:
+          type: varchar(255)
+        menu_su_organizers:
+          type: varchar(255)
+        menu_su_faq:
+          type: varchar(255)
+
         footer_copyright:
           type: varchar(255)
         footer_description:
@@ -274,6 +303,48 @@ abilities:
           type: varchar(255)
         description:
           type: text
+    dictionary:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    our_su:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    organizers:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    su_abroad:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    about_ukraine:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    travel_tips:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
+    su_faq:
+      columns:
+        title:
+          type: varchar(255)
+        description:
+          type: text
     events:
       columns:
         status_local:
@@ -293,6 +364,8 @@ abilities:
         sub_menu_european:
           type: varchar(255)
         sub_menu_future:
+          type: varchar(255)
+        calendar_title:
           type: varchar(255)
     profile:
       columns:

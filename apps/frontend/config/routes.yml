@@ -6,6 +6,36 @@
 
 routes:
 
+  aegee_today_default:
+    url: 'aegee-today-list/'
+    controller: Members
+    action: AEGEETodayDefault
+
+  aegee_today_detail:
+    url: 'aegee-today/{slug}/'
+    controller: Members
+    action: AEGEETodayDetail
+
+  traveling_report_default:
+    url: 'traveling-reports/'
+    controller: Members
+    action: TravelingReportDefault
+
+  traveling_report_detail:
+    url: 'traveling-report/{slug}/'
+    controller: Members
+    action: TravelingReportDetail
+
+  member_detail:
+    url: 'member/{slug}/'
+    controller: Members
+    action: Detail
+
+  calendar:
+    url: 'calendar/'
+    controller: Events
+    action: Calendar
+
   user:
     url: 'user/{id}/'
     controller: Profile
@@ -25,6 +55,7 @@ routes:
     url: 'profile/save-avatar/'
     controller: Profile
     action: SaveAvatar
+
   visa_detail:
     url: 'visa/{slug}/'
     controller: Index
@@ -59,11 +90,40 @@ routes:
     controller: Index
     action: AegeeUerope
 
+  our_su:
+    url: 'our-su/'
+    controller: Index
+    action: OurSU
+  su_abroad:
+    url: 'su-abroad/'
+    controller: Index
+    action: SUAbroad
+  travel_tips:
+    url: 'travel-tips/'
+    controller: Index
+    action: TravelTips
+  about_ukraine:
+    url: 'about-ukraine/'
+    controller: Index
+    action: AboutUkraine
+  organizers:
+    url: 'organizers/'
+    controller: Index
+    action: Organizers
+  su_faq:
+    url: 'su-faq/'
+    controller: Index
+    action: SuFaq
+
   aegee_kyiv:
     url: 'aegee-kyiv/'
     controller: Index
     action: AegeeKyiv
 
+  dictionary:
+    url: 'dictionary/'
+    controller: Index
+    action: Dictionary
   how_to_join:
     url: 'how-to-join/'
     controller: Index

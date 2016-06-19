@@ -276,6 +276,157 @@ modules:
       default:
         show: [title, short_description, _created_at, slug, is_active, main_image]
 
+  memberofthemonth:
+    title: Мембер місяця
+    type: List
+    model: MemberOfMonth
+    sort: 'id DESC'
+    per_page: 15
+    tabs:
+      gallery:
+        title: Галерея
+        plugin: gallery
+
+    filter:
+      title:
+        field: title
+        title: Назва
+        type: text
+      is_active:
+        field: is_active
+        title: Активна
+        type: checkbox
+      show_on_main:
+        field: show_on_main
+        title: На головній
+        type: checkbox
+    fields:
+      id: ID
+      title: Назва
+      short_description:
+        title: Короткий опис
+        type: area
+      description:
+        title: Повний опис
+        type: rich
+      slug:
+        title: Посилання
+        description:  приклад eagee-new-year-2014
+      is_active:
+        title: Опублікувати
+        type: checkbox
+      _created_at:
+        title: Created at
+        type: date
+      main_image:
+        title: Головне зображеня
+        type: image
+        description: size: 300x200px. JPG, PNG
+    actions:
+      default:
+        show: [title, is_active,  main_image]
+
+  travelingreport:
+    title: Звіти подорожей
+    type: List
+    model: TravelingReport
+    sort: 'id DESC'
+    per_page: 15
+    tabs:
+      gallery:
+        title: Галерея
+        plugin: gallery
+
+    filter:
+      title:
+        field: title
+        title: Назва
+        type: text
+      is_active:
+        field: is_active
+        title: Активна
+        type: checkbox
+      show_on_main:
+        field: show_on_main
+        title: На головній
+        type: checkbox
+    fields:
+      id: ID
+      title: Назва
+      short_description:
+        title: Короткий опис
+        type: area
+      description:
+        title: Повний опис
+        type: rich
+      slug:
+        title: Посилання
+        description:  приклад eagee-new-year-2014
+      is_active:
+        title: Опублікувати
+        type: checkbox
+      _created_at:
+        title: Created at
+        type: date
+      main_image:
+        title: Головне зображеня
+        type: image
+        description: size: 300x200px. JPG, PNG
+    actions:
+      default:
+        show: [title,  is_active, main_image]
+
+  aegeetoday:
+    title: AEGEE today
+    type: List
+    model: AEGEEToday
+    sort: 'id DESC'
+    per_page: 15
+    tabs:
+      gallery:
+        title: Галерея
+        plugin: gallery
+
+    filter:
+      title:
+        field: title
+        title: Назва
+        type: text
+      is_active:
+        field: is_active
+        title: Активна
+        type: checkbox
+      show_on_main:
+        field: show_on_main
+        title: На головній
+        type: checkbox
+    fields:
+      id: ID
+      title: Назва
+      short_description:
+        title: Короткий опис
+        type: area
+      description:
+        title: Повний опис
+        type: rich
+      slug:
+        title: Посилання
+        description:  приклад eagee-new-year-2014
+      is_active:
+        title: Опублікувати
+        type: checkbox
+      _created_at:
+        title: Created at
+        type: date
+      main_image:
+        title: Головне зображеня
+        type: image
+        description: size: 300x200px. JPG, PNG
+    actions:
+      default:
+        show: [title, is_active, main_image]
+
+
   projects:
     title: Проекти
     type: List
@@ -392,6 +543,9 @@ modules:
           -
             id: 10
             title: Revcom
+          -
+            id: 11
+            title: European Affairs Responsbile
       is_honorary_member:
         title: Почесний мембер
         type: checkbox
@@ -638,9 +792,11 @@ modules:
       menu_what_is_aegee: What is AEGEE 
       menu_aegee_europe: AEGEE-EUROPE 
       menu_aegee_kyiv: AEGEE-Kyiv 
-      menu_activity: Activity 
+      menu_dictionary: Dictionary
+      menu_activity: Activity
       menu_projects: Projects 
-      menu_events: Events 
+      menu_events: Events
+      menu_calendar: Calendar
       menu_working_group: Working group 
       menu_news: News 
       menu_useful_information: Useful information 
@@ -650,6 +806,18 @@ modules:
       menu_contacts: Contacts 
       menu_partners: Partners 
       menu_how_to_join: How to join
+      menu_members: Members
+      menu_members_of_the_month: Member of the month
+      menu_aegee_today: AEGEE today
+      menu_traveling_report: Traveling report
+      menu_su: SU
+      menu_our_su: Our SU
+      menu_su_abroad: SU abroad
+      menu_about_ukraine: About ukraine
+      menu_travel_tips: Travel tips
+      menu_su_organizers: SU organizer
+      menu_su_faq: SU FAQ
+
       hr3:
         type: hr_title
         title: Feedback (popup)
@@ -703,7 +871,7 @@ modules:
       sub_menu_aegee: AEGEE
       sub_menu_partners: Партнери
 
-  eventsmlt:
+  mlt:
     title: Події
     type: LangStatic
     hide_from_menu: true
@@ -720,6 +888,7 @@ modules:
       finish_at: Завершення
       dedline_at: Дедлайн
       fee: Внесок
+      event: Залоглов календаря
 
   profile:
     title: Профайл
@@ -880,6 +1049,96 @@ modules:
         title: Опис
         type: rich
 
+  dictionary:
+    title: Dictionary
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: dictionary
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  oursu:
+    title: Our SU
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: our_su
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  traveltips:
+    title: Travel Tips
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: travel_tips
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  sufaq:
+    title: SU FAQ
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: su_faq
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  aboutukraine:
+    title: About Ukraine & Visited Cities
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: about_ukraine
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  organizers:
+    title: Organizers & Contacts
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: organizers
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
+
+  suabroad:
+    title: SU abroad
+    type: LangStatic
+    hide_from_menu: true
+    model: StaticPage
+    select:
+      slug: su_abroad
+    fields:
+      title: Назва
+      description:
+        title: Опис
+        type: rich
 
   pages:
     title: Текстові сторінки
@@ -892,3 +1151,17 @@ modules:
         title: About AEGEE Kyiv
       howtojoin:
         title: How to join
+      dictionary:
+        title: Dictionary
+      oursu:
+        title: Our SU
+      traveltips:
+        title: Travel Tips
+      aboutukraine:
+        title: About Ukraine & Visited Cities
+      sufaq:
+        title: SU FAQ
+      organizers:
+        title: Organizers & Contacts
+      suabroad:
+        title: SU abroad

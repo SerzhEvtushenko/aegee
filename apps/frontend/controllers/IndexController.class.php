@@ -36,6 +36,42 @@ Class IndexController extends slController {
         $this->view->page = StaticPage::loadOneBySlug('how_to_join');
     }
 
+    public function actionDictionary() {
+        $this->view->setTemplate('index/static.tpl');
+        $this->view->page = StaticPage::loadOneBySlug('dictionary');
+    }
+
+    public function actionOurSU() {
+        $this->view->setTemplate('index/static.tpl');
+        $this->view->page = StaticPage::loadOneBySlug('our_su');
+    }
+
+    public  function actionSUAbroad() {
+        $this->view->setTemplate('index/static.tpl');
+        $this->view->page = StaticPage::loadOneBySlug('su_abroad');
+    }
+
+    public  function actionOrganizers() {
+        $this->view->setTemplate('index/static.tpl');
+        $this->view->page = StaticPage::loadOneBySlug('organizers');
+    }
+
+    public  function actionAboutUkraine() {
+        $this->view->setTemplate('index/static.tpl');
+        $this->view->page = StaticPage::loadOneBySlug('about_ukraine');
+    }
+
+    public  function actionTravelTips() {
+        $this->view->setTemplate('index/static.tpl');
+        $this->view->page = StaticPage::loadOneBySlug('travel_tips');
+    }
+
+    public function actionSuFaq()
+    {
+        $this->view->setTemplate('index/static.tpl');
+        $this->view->page = StaticPage::loadOneBySlug('su_faq');
+    }
+
     public function actionSaveFeedback(){
         $result['status'] = false;
         if ($data = $this->route->getVar('data')) {
@@ -44,7 +80,6 @@ Class IndexController extends slController {
 
         $this->echoJSON($result);
     }
-
 
     public function actionPartners(){
         StaticPage::setMetaData('partners');
@@ -84,12 +119,6 @@ Class IndexController extends slController {
 
     public function actionTest(){
 	    die('.');
-	    AclUser::updateUserList();
-//        AclUser::updateAvatars();
-
-        $u = AclUser::loadList();
-        $u->loadFiles();
-        vd(1);
     }
 
 }

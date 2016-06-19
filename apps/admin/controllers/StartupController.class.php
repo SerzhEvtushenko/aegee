@@ -20,6 +20,7 @@ class StartupController extends slAdminStartupController {
     public function preAction() {
 
         parent::preAction();
+
         if (slACL::isLoggedIn() && !slACL::hasUserRight('administrator') && slACL::hasUserRight('root')){
             $this->route->redirectIndex();
         }

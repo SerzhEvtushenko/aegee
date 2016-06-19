@@ -43,22 +43,24 @@
     </div>
 </section>
 
-<section class="news_index">
-    <div class="min_width clearfix">
-        <h1>{$contacts.previous_board_title}</h1>
-        <ul class="board_holder old_board clearfix">
-            {foreach from=$board.old_boards key=key item=users}
-                <li>
-                    <div class="years">{$key}</div>
-                    <ul class="board_sub_holder">
-                        {foreach from=$users item=user}
-                            {if strlen($user.name)}
-                                <li><b>{$user.name}</b>: {$user.category_title}</li>
-                            {/if}
-                        {/foreach}
-                    </ul>
-                </li>
-            {/foreach}
-        </ul>
-    </div>
-</section>
+{if count($board.old_boards) > 0}
+    <section class="news_index">
+        <div class="min_width clearfix">
+            <h1>{$contacts.previous_board_title}</h1>
+            <ul class="board_holder old_board clearfix">
+                {foreach from=$board.old_boards key=key item=users}
+                    <li>
+                        <div class="years">{$key}</div>
+                        <ul class="board_sub_holder">
+                            {foreach from=$users item=user}
+                                {if strlen($user.name)}
+                                    <li><b>{$user.name}</b>: {$user.category_title}</li>
+                                {/if}
+                            {/foreach}
+                        </ul>
+                    </li>
+                {/foreach}
+            </ul>
+        </div>
+    </section>
+{/if}

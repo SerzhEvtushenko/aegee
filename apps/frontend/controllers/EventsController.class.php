@@ -13,11 +13,12 @@ Class EventsController extends slController {
         $this->view->pager          = slPaginator::getInfo();
         $this->view->link__         = 'events/'. (strlen($tag) > 0 ? 'tag/'.$tag.'/' : '');
         $this->view->pre_page_link  = 'page/';
-        $this->view->route_name     = 'events';
+        $this->view->route_name     = 'news';
 	    $this->view->currentFilter  = $filter;
 	    $this->view->post_page_link = ('all' <> $filter) ? '?filter='.$filter : '';;
 
     }
+
 
     public function actionDetail(){
         if ($slug = $this->route->getVar('slug')) {
@@ -31,9 +32,15 @@ Class EventsController extends slController {
 
             $this->view->event              = $event;
             $this->view->another_events     = $event->getAnotherEvent();
+            $this->view->route_name     = 'news';
         }else{
             throw new slRouteNotFoundException('');
         }
+    }
+
+    public function actionCalendar() {
+
+        $this->view->route_name     = 'news';
     }
 
 }
