@@ -26,7 +26,11 @@ class StaticPage extends BaseStaticPage {
 
     public function save($with_validation = true, $force_save = false) {
         $result = parent::save($with_validation, $force_save);
-        self::updateCache();
+
+        if (1 == $this->translate) {
+            self::updateCache();
+        }
+
         return $result;
     }
 
@@ -34,7 +38,6 @@ class StaticPage extends BaseStaticPage {
         slMemcached::initialize();
 
         if (slMemcached::getHandler()) {
-
 
             $pages = self::loadList(C::create()->where(array('lang'=>MLT::getActiveLanguage()))->andWhere(array('translate'=>1)));
             $mlt_ = array();
@@ -51,8 +54,6 @@ class StaticPage extends BaseStaticPage {
             }
             slMemcached::set('mlt_'.MLT::getActiveLanguage(), $mlt_);
         }
-
-
     }
 
     static public function mltIsset($params){

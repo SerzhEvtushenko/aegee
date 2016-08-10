@@ -1,0 +1,62 @@
+table: aegee_todays
+columns:
+  id:
+    type: 'int(11) unsigned'
+    auto_increment: true
+  title:
+    type: varchar(255)
+    not_null: true
+  slug:
+    type: varchar(255)
+    not_null: true
+  is_active:
+    type: tinyint
+  short_description:
+    type: varchar(255)
+  description:
+    type: text
+  _created_at:
+    type: datetime
+    default: '#sql#NOW()'
+  _updated_at:
+    type: datetime
+    default: '#sql#NOW()'
+  _meta_title:
+    type: varchar(255)
+  _meta_description:
+    type: varchar(255)
+  _meta_keywords:
+    type: varchar(255)
+abilities:
+  timetrack: true
+  metainfo: true
+  mlt:
+    columns:
+      - title
+      - short_description
+      - description
+      - _meta_title
+      - _meta_description
+      - _meta_keywords
+      - is_active
+  files:
+    main_image:
+      sizes:
+        big: 300x200
+      process: fitOut
+  gallery:
+    single: true
+    sizes:
+      small:
+        size: 175x150
+        process: fitOut
+indexes:
+  primary:
+    columns:
+      - id
+  slug:
+    type: simple
+    columns: slug
+  is_active:
+    type: simple
+    columns: is_active

@@ -37,7 +37,7 @@ class AclUser extends BaseAclUser {
 	static public function checkForDraft(){
 		Q::create('acl_users')
 				->delete()
-				->where('status = 0')
+				->where('status = ' . self::STATUS_FAKE)
 				->andWhere('register_date < \'' . date('Y-m-d',(strtotime ( '-1 day' ) )).'\'')
 				->exec();
 	}
@@ -63,7 +63,6 @@ class AclUser extends BaseAclUser {
 	}
 
 	static public function loadList($criteria = null, $query_part = null) {
-
 		$criteria = !empty($criteria) ? $criteria : C::create()->orderBy('first_name ASC');
 
 		return parent::loadList($criteria, $query_part);
@@ -151,8 +150,9 @@ class AclUser extends BaseAclUser {
 		if (empty($result['errors']) && isset($_SESSION['current_user_id'])) {
 			$user = self::loadOne(C::create()->where(array('id'=>$_SESSION['current_user_id'])));
 			$user->mergeData($user_info);
-			$user->status = self::STATUS_ACTIVE;
+			$user->status   = self::STATUS_ACTIVE;
 			$user->password = md5($user_info['pass']);
+
 			if ($user->save()) {
 				slACL::authorize(array('email' => $user->email));
 				self::set('user', $user->toArray());
@@ -256,24 +256,12 @@ class AclUser extends BaseAclUser {
             }
         }
 
-
-
         return $result;
 
     }
 
     static public function updateUserList(){
         $step = 0;
-//        Q::execSQL('truncate acl_users');
-
-//	    $members = Q::create('members m')
-//		    ->select('m.*, p.password')
-//		    ->leftJoin('my_aspnet_membership p', 'm.email = p.email')
-//	        ->where('m.id not in (select id from acl_users)')
-//		    ->orderBy('m.id')
-//		    ->limit($step.', 50')
-//		    ->exec();
-
 
         while($members = Q::create('members m')
             ->select('m.*, p.password')
@@ -297,13 +285,11 @@ class AclUser extends BaseAclUser {
 		                ->one()
 		                ->exec();
 	            if (empty($r)) {
-//		            vd($member);
 		            Q::create('acl_users')
 			            ->insert($member)
 			            ->exec();
 	            }
 
-//                $users[] = $member;
             }
 
 
@@ -395,16 +381,19 @@ class AclUser extends BaseAclUser {
 			.'<br/>Email:'.$this->email
 			.'<br/>Phone: '. $this->phone
 			.'<br/>Name: '. $this->first_name.' '.$this->last_name;
+
+		slMailer::sendMail('hr@aegee.kiev.ua', $title, $body);
 		slMailer::sendMail('it@aegee.com', $title, $body);
 	}
 
 	public function save($with_validation = true, $force_save = false) {
 		$this->title = $this->first_name.' '.$this->last_name;
+
 		return parent::save($with_validation, $force_save);
 	}
 
     public function getSmallAvatar(){
-        return (isset($this->avatar['sizes']['small']['link'])) ? $this->avatar['sizes']['small']['link'] :  'images/avatar_150.jpg';
+        return (isset($this->avatar['link'])) ? $this->avatar['sizes']['small']['link'] :  'images/avatar_150.jpg?id='.$this->id;
     }
 
 //Сори за гомнометод, не мой
@@ -450,7 +439,7 @@ class AclUser extends BaseAclUser {
     }
 
 	public function delete() {
-		if ($this->login == 'root') return;
+		return true;
 	}
 
 	public function setPassword($value) {
@@ -461,6 +450,7 @@ class AclUser extends BaseAclUser {
 	public function setRights($new_rights) {
 
 		$users_rights = slACL::getUserRights($this->email);
+
 		if (count($new_rights)) {
 
 			$revoked = array_diff($users_rights,$new_rights);

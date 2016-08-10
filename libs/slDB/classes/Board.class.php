@@ -20,8 +20,7 @@ class Board extends BaseBoard {
         return $user;
     }
 
-    static public function
-    getList(){
+    static public function getList(){
 
         $category_list = array(
             1   => 'President',
@@ -34,6 +33,7 @@ class Board extends BaseBoard {
             8   => 'Projects',
             9   => 'Events',
             10  => 'Revcom',
+	        11  => 'European Affairs Responsbile'
         );
 
         $honorary_members   = array();
@@ -89,7 +89,6 @@ class Board extends BaseBoard {
         );
     }
 
-
 	public function getCategoryTitle(){
 		$category_list = array(
 			1   => 'President',
@@ -102,8 +101,8 @@ class Board extends BaseBoard {
 			8   => 'Projects',
 			9   => 'Events',
 			10  => 'Revcom',
+			11  => 'European Affairs Responsbile'
 		);
-
 
 		return array_key_exists($this->id_category, $category_list) ? $category_list[$this->id_category] : '';
 	}
